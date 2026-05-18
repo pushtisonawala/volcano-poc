@@ -7,16 +7,20 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/go-logr/logr"
 	v1alpha1 "github.com/pushtisonawala/namespace-queue-poc/api/v1alpha1"
 	"github.com/pushtisonawala/namespace-queue-poc/controller"
 	"k8s.io/apimachinery/pkg/runtime"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
+	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client/config"
 	"sigs.k8s.io/controller-runtime/pkg/manager"
 )
 
 func main() {
+	ctrl.SetLogger(logr.Discard())
+
 	scheme := runtime.NewScheme()
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 	utilruntime.Must(v1alpha1.AddToScheme(scheme))
