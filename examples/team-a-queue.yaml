@@ -1,0 +1,15 @@
+apiVersion: scheduling.volcano.sh/v1alpha1
+kind: NamespaceQueue
+metadata:
+  name: team-a-queue
+  namespace: team-a
+spec:
+  capability:
+    cpu: "4"
+    memory: 8Gi
+  guarantee:
+    cpu: "2"
+    memory: 4Gi
+  reclaimable: true
+  parentQueue: default
+  weight: 100

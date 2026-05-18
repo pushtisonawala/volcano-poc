@@ -1,0 +1,38 @@
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Go build artifacts
+bin/
+dist/
+.gocache/
+vendor/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.coverprofile
+coverage.out
+cover.out
+
+# Logs
+*.log
+
+# Local environment files
+.env
+.env.*
+
+# Kubernetes/local tooling noise
+.cache/
+kubeconfig
+tmp/
+*.local
